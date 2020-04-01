@@ -1,0 +1,182 @@
+body{
+    margin: 0px;
+}
+/* barra lateral del menu*/
+.navbar-sidaber{
+    width: 350px;
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+/* img de logo de empresa */
+.logo{
+    width: 40%;
+}
+.navbar-brand{
+    width: 350px;
+}
+/* informacion de ususario */
+.linea-a{
+    margin-top: -3px;
+    margin: 0px;
+    background-color: gray;
+}
+.user-photo-information{
+    padding:25px;
+    margin-top: -10px;
+    width: 350px;
+    height: 110px;
+}
+.user-information{
+    float: left;
+    margin-left: 20px;
+}
+.user-information > span{
+    display: block;
+}
+.name-user{
+    font-weight: bold;
+    font-size: 19px;
+    color: white;
+}
+.account-type{
+    color: gray;
+    font-size: 13px;
+}
+.icon-circle {
+    font-size: 8px;
+    margin-right: 4px;
+    color: #5cb85c;
+  }
+.user-photo{
+    float: left;
+    width: 90px;
+    height: 90px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.linea{
+    background-color: gray;
+    margin-top: 25px;
+}
+/* fin de informacion del usuario*/
+.tittle{
+    color: gray;
+    font-weight: bold;
+    margin-left: 10px;
+}
+/* Menu de navegacion */
+.nav-side-menu li{
+    margin-left: -40px;
+    padding: 8px;
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.sub-menu{
+    margin-left: -40px;
+
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  list-style: none;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: Fontawesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color:gray;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 17px;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 5px solid #3d60d1;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.nav-side-menu li a .label{
+    margin-left: 20px;
+}
+/* barra superior */
+.content{
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    background-color: rgb(219, 218, 218);
+    position: fixed;
+}
+.navbar{
+    background-color: white;
+    padding: 10px;
+    height: 67px;
+    border-color: gray;
+}
+.button{
+  margin-left: 340px
+}
+.navbar ul li{
+    list-style: none;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:black;
+}
+.navbar .menu-perfil{
+  margin-top: 14px;
+}
+.container-data{
+  margin-top: 20px;
+  margin-left: 380px;
+}
+.last-update{
+  background-color:#ffff;
+  width: 275px;
+  border-radius: 5px;
+  padding:5px;
+  float: left;
+
+}
+.last{
+  float: left;
+  margin-top: 6px;
+  margin-left: 6px;
+  font-weight: bold;
+}
+.date{
+ margin-top: 6px;
+ margin-left: 13px;
+}

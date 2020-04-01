@@ -1,175 +1,138 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  {% block tittle %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="../static/css/dad.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <title>Sistema de ubicaciones| Area de Camara</title>
-  {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/dad.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <link rel="icon" type="image/png" href="/static/images/logo_login.png" />
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <title>Sistema de ubicaciones| Area de Camara</title>
 </head>
-
 <body>
-  {% block nav %}
-  <div class="d-flex" id="wrapper">
-    <div class="bg-dark border-right" id="sidebar-wrapper">
-      <div class="sidebar-brand text-center">
-        <img src="../static/images/logo_login.png" class="logo_nav">
-      </div>
-      <div class="sidebar-header">
-        <div class="user_sidebar">
-          <img src="../static/images/user.jpg" class="">
+    <!-- inicio de la navbar -->
+    <div class="navbar-sidaber bg-dark ">
+        <!-- logo de la empresa -->
+        <div class="navbar-brand  text-center">
+            <a href="">
+                <img class ="logo"src="../static/images/logo_login.png">
+            </a>
+            <hr class="linea-a">
         </div>
-        <div class="user_info">
-          <span class="user_name">
-            <strong>{{ Name }}</strong>
-          </span>
-          <span class="user_account_type" >{{ Account_Type }}</span>
-          <span class="circle" ><i class="icon-circle fa fa-circle" ></i> En linea</span>
+        <!-- informacion del usuario -->
+        <div class="user-photo-information">
+            <div >
+                <img class="user-photo" src="../static/images/user.jpg">
+            </div>
+            <div class="user-information" >
+                <span class="name-user">{{Name}}</span>
+                <span class="account-type">{{Account_Type}}</span>
+                <span class="account-type"> <i class="icon-circle fa fa-circle" > </i>  En linea</span>
+            </div>
         </div>
-      </div>
-      <hr class="linea">
-      <!-- Menu de navbar lateras -->
-      <div class="sidebar_menu">
-        <span class="tittle"> Menu </span>
-        <ul>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fa fa-home icon"></i>
-              <span class="text-center">Inicio</span>
-            </a>
-          </li>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fa fa-database icon"></i>
-              <span class="text-center">Actualizar datos</span>
-            </a>
-          </li>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fa fa-boxes icon"></i>
-              <span class="text-center">Camara 01</span>
-            </a>
-          </li>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fa fa-boxes icon"></i>
-              <span class="text-center">Camara 06</span>
-            </a>
-          </li>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fa fa-boxes icon"></i>
-              <span class="text-center">Camara 07</span>
-            </a>
-          </li>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fa fa-boxes icon"></i>
-              <span class="text-center">Camara 08</span>
-            </a>
-          </li>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fas fa-box icon"></i>
-              <span class="text-center">Materia</span>
-            </a>
-          </li>
-          <li class="item_menu">
-            <a href="home.html" class="a">
-              <i class="fas fa-box icon"></i>
-              <span class="text-center">Saldos</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        {% if Account_Type == 'Administrador' or Account_Type == 'ADMINISTRADOR' %}
-        <div class="sidebar_menu">
-          <span class="tittle"> Administrador </span>
-          <ul>
-            <li class="item_menu">
-              <a href="home.html" class="a">
-                <i class="fas fa-users icon"></i>
-                <span class="text-center">Registrar usuario</span>
-              </a>
-            </li>
-            <li class="item_menu">
-              <a href="home.html" class="a">
-                <i class="fas fa-users icon"></i>
-                <span class="text-center">Lista de usuarios</span>
-              </a>
-            </li>
-          </ul>
+        <hr class="linea">
+        <div class="nav-side-menu">
+            <span class="tittle">Menu</span>
+            <div class="menu-list">
+                <ul class="">
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span class="label">Inicio</span>
+                        </a>
+                    </li>
+                    <li  data-toggle="collapse" data-target="#camaras" class="collapsed">
+                        <a href="#">
+                            <i class="fas fa-th"></i>
+                            <span class="label">Almacenes de Congelado</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                    </li>
+                        <ul class="sub-menu collapse" id="camaras">
+                            <li><a href="#">Camara N°01</a></li>
+                            <li><a href="#">Camara N°06</a></li>
+                            <li><a href="#">Camara N°07</a></li>
+                            <li><a href="#">Camara N°08</a></li>
+                        </ul>
+                    <li  data-toggle="collapse" data-target="#reportessaldos" class="collapsed">
+                        <a href="#">
+                            <i class="fas fa-boxes"></i>
+                            <span class="label">Reportes de Saldos </span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                    </li>
+                        <ul class="sub-menu collapse" id="reportessaldos">
+                            <li><a href="#">Sala N°01</a></li>
+                            <li><a href="#">Sala N°02</a></li>
+                        </ul>
+                    <li  data-toggle="collapse" data-target="#reportepallet" class="collapsed">
+                        <a href="#">
+                            <i class="fas fa-pallet"></i>
+                            <span class="label">Reportes de Pallets</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                    </li>
+                        <ul class="sub-menu collapse" id="reportepallet">
+                            <li><a href="#">Camara N°07</a></li>
+                            <li><a href="#">Camara N°08</a></li>
+                        </ul>
+                </ul>
+            </div>
+            <span class="tittle">Administrador</span>
+            <div class="menu-list">
+                <ul class="">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-users"></i>
+                            <span class="label">Usuario</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        {% endif %}
-      </div>
     </div>
-    <div id="page-content-wrapper">
+    <div class="content">
+        <nav class="navbar navb-expand-lg ">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-primary button">Actualizar Datos</button>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                            {{Name}}
+                        </a>
+                        <div class="dropdown-menu menu-perfil" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Perfil</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-data">
+            <div class="last-update">
+                <div class="last">
+                  <label> Ultima Actualización </label>
+                </div>
+                <div class="">
+                  <label class="date"> 19/02/2020 </label>
+                </div>
+            </div>
+            <div>
+              {% block content%}
+                {% block container %}
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Menu desplegable</button>
+                {% endblock %}
+              {% endblock %}
+            </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Actualizar Datos</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Perfil
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Configuracion de cuenta</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">cerrar session</a>
-              </div>
-            </li>
-          </ul>
         </div>
-      </nav>
-    {%endblock %}
-    {% block content %}
-    <div class="container-fluid">
-      <div class="row">
-        {% block container %}
-
-        {% endblock  %}
-      </div>
     </div>
-
-    <!-- /#page-content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-{% endblock %}
 </body>
-
 </html>

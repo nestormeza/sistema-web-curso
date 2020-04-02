@@ -1,11 +1,63 @@
-{% extends 'bootstrap/base.html' %}
 
-{% block title %}
-{% endblock %}
-
-{% block navbar %}
-{% endblock %}
-
-{% block content %}
-    <h2> error</h2>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <link rel="icon" type="image/png" href="/static/images/logo_login.png" />
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <title></title>
+  </head>
+  <body>
+    <style>
+      body{
+        background-color:#E6E6E6;
+      }
+      .image_error{
+        width: 40%;
+      }
+      .container-errors{
+        margin-left: 34%;
+        border-style: solid;
+        width: 30%;
+        margin-top: 100px;
+        padding-top: 30px;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color:#BDBDBD;
+        background-color: white;
+        border-top: 5px solid #2E64FE;
+      }
+      .label{
+        color: #2E64FE;
+      }
+      .label-text{
+        font-size: 13px;
+        color: gray ;
+      }
+      .url{
+        font-size: 13px;
+      }
+    </style>
+    <div class="container-errors text-center">
+      <div >
+        <img class="image_error" src="../static/images/seafrost-error.png">
+      </div>
+      <div class="label">
+        <strong> La pagina que busca no existe</strong>
+        <hr>
+      </div>
+      <label class="label-text"> 
+        Puedes haber escrito mal la direccion o <br>
+        la pagina haber sido cambiada o removida.
+      </label>
+      <br>
+      <a  class="url" href="{{ url_for('page.home') }}">Regresar al inicio</a>
+    </div>
+  </body>
+</html>

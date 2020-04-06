@@ -1,9 +1,11 @@
 from flask import Blueprint
 from flask import render_template,request,flash,redirect, url_for
 from flask_login import login_user, logout_user, login_required,current_user
+from sqlalchemy import create_engine
 from .models import User
 from .forms import LoginForm,registerForm
 from . import login_manager
+from config import DevelopmentConfig
 
 page=Blueprint('page',__name__)
 
@@ -55,6 +57,12 @@ def register():
 @page.route('/home')
 @login_required
 def home():
-    Name = current_user.Name
+    engine = create_engine(DevelopmentConfig.SQLALCHEMY_DATABASE_URI)
+    con = engine.connect()
+    sql ="Select Name from users where id= %s"
+    data=[[current_user.id]]
+    rs = con.execute(sql,data)
+    Name = rs.fetchall()
+    con.close()
     Account_Type = current_user.Account_Type
     return render_template('home.html',Name=Name,Account_Type=Account_Type)

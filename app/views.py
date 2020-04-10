@@ -59,10 +59,11 @@ def register():
 def home():
     engine = create_engine(DevelopmentConfig.SQLALCHEMY_DATABASE_URI)
     con = engine.connect()
-    sql ="Select Name from users where id= %s"
-    data=[[current_user.id]]
+    sql ="Select Name as Name from users where id= %b"
+    data=current_user.id
     rs = con.execute(sql,data)
-    Name = rs.fetchall()
+    Nombre = rs.fetchone()
+    Name=Nombre['Name']
     con.close()
     Account_Type = current_user.Account_Type
     return render_template('home.html',Name=Name,Account_Type=Account_Type)

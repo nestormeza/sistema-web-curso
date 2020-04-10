@@ -180,3 +180,6 @@ body{
  margin-top: 6px;
  margin-left: 13px;
 }
+.modal{
+  margin-top: -100px;
+}

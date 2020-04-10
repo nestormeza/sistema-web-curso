@@ -59,7 +59,7 @@ def register():
 def home():
     engine = create_engine(DevelopmentConfig.SQLALCHEMY_DATABASE_URI)
     con = engine.connect()
-    sql ="Select Name as Name from users where id= %b"
+    sql ='SELECT CONCAT(UPPER(LEFT(SUBSTRING_INDEX(Name," ",1),1)),LOWER(SUBSTRING(SUBSTRING_INDEX(Name," ",1),2))," ",CONCAT(UPPER(LEFT(SUBSTRING_INDEX(Last_Name," ",1),1)),LOWER(SUBSTRING(SUBSTRING_INDEX(Last_Name," ",1),2))))  AS Name  FROM users where id= %b'
     data=current_user.id
     rs = con.execute(sql,data)
     Nombre = rs.fetchone()

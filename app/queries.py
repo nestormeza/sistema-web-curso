@@ -14,3 +14,11 @@ class queries():
         Name=Nombre['Name']
         con.close()
         return Name
+
+    def Users_list():
+        engine = create_engine(DevelopmentConfig.SQLALCHEMY_DATABASE_URI)
+        con = engine.connect()
+        rs = con.execute('SELECT id,LOWER(Name) AS Name,LOWER(Last_Name) AS Last_Name,Account_Type,User_Name FROM users')
+        Users = rs.fetchall()
+        con.close()
+        return Users

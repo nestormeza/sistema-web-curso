@@ -65,4 +65,5 @@ def home():
 def list_user():
     Name = queries.Name_user()
     Account_Type = current_user.Account_Type
-    return render_template('users/list.html',Name=Name,Account_Type=Account_Type)
+    Users = queries.Users_list()
+    return render_template('users/list.html',Name = Name,Account_Type = Account_Type,Users = Users)

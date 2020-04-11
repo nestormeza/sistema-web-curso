@@ -167,11 +167,9 @@ body{
   width: 275px;
   border-radius: 5px;
   padding:5px;
-  float: left;
 
 }
 .last{
-  float: left;
   margin-top: 6px;
   margin-left: 6px;
   font-weight: bold;
@@ -182,4 +180,8 @@ body{
 }
 .ventana{
   margin-top: -500px;
+}
+.container{
+  position: absolute;
+  margin-top: 60px;
 }

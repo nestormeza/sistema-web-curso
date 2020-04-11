@@ -1,16 +1,27 @@
 {% extends 'layout.html' %}
 
 {% block container %}
-  <table class="table">
-    <thead>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Tipo de cuenta</th>
-      <th>Usuario</th>
-    </thead>
-    <tbody>
-      {%}
-    </tbody>
-
-  </table>
+  <div class="d-inline-block">
+    <h2> Usuarios Registrados </h2>
+  </div>
+    <table class="table table-sm"">
+      <thead class="thead-dark">
+        <th scope="col"> N° </th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Tipo de cuenta</th>
+        <th scope="col">Usuario</th>
+      </thead>
+      <tbody>
+        {% for User in Users %}
+        <tr>
+          <td scope="row" class="table-light">{{User.id}}</td>
+          <td class="table-light">{{User.Name}}</td>
+          <td class="table-light">{{User.Last_Name}}</td>
+          <td class="table-light">{{User.Account_Type}}</td>
+          <td class="table-light">{{User.User_Name}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
 {% endblock %}

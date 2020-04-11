@@ -4,7 +4,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql://root:@localhost/db_camara'
-
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 config = {
     'development':DevelopmentConfig,
     'default': DevelopmentConfig

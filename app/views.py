@@ -1,11 +1,10 @@
 from flask import Blueprint
 from flask import render_template,request,flash,redirect, url_for
 from flask_login import login_user, logout_user, login_required,current_user
-from sqlalchemy import create_engine
 from .models import User
 from .forms import LoginForm,registerForm
 from . import login_manager
-from config import DevelopmentConfig
+from .queries import queries
 
 page=Blueprint('page',__name__)
 
@@ -46,7 +45,7 @@ def login():
 @login_required
 def register():
     form = registerForm(request.form)
-    Name = current_user.Name
+    Name = queries.Name_user()
     Account_Type = current_user.Account_Type
     if request.method == 'POST':
         if form.validate():
@@ -57,13 +56,13 @@ def register():
 @page.route('/home')
 @login_required
 def home():
-    engine = create_engine(DevelopmentConfig.SQLALCHEMY_DATABASE_URI)
-    con = engine.connect()
-    sql ='SELECT CONCAT(UPPER(LEFT(SUBSTRING_INDEX(Name," ",1),1)),LOWER(SUBSTRING(SUBSTRING_INDEX(Name," ",1),2))," ",CONCAT(UPPER(LEFT(SUBSTRING_INDEX(Last_Name," ",1),1)),LOWER(SUBSTRING(SUBSTRING_INDEX(Last_Name," ",1),2))))  AS Name  FROM users where id= %b'
-    data=current_user.id
-    rs = con.execute(sql,data)
-    Nombre = rs.fetchone()
-    Name=Nombre['Name']
-    con.close()
+    Name = queries.Name_user()
     Account_Type = current_user.Account_Type
     return render_template('home.html',Name=Name,Account_Type=Account_Type)
+
+@page.route('/list_user')
+@login_required
+def list_user():
+    Name = queries.Name_user()
+    Account_Type = current_user.Account_Type
+    return render_template('users/list.html',Name=Name,Account_Type=Account_Type)
